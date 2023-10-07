@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "b3055d06-29b7-4cc6-8b1a-44de50f95c26",
+		"name": "BACKEND-API-DIGIFLAZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3250234"
+	},
+	"item": [
+		{
+			"name": "Product pricelist",
+			"item": [
+				{
+					"name": "Product prepaid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/get-product-prepaid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"get-product-prepaid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produck pasca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/product/get-product-pasca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"get-product-pasca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
