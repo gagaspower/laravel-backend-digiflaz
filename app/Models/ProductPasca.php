@@ -22,6 +22,12 @@ class ProductPasca extends Model
     ];
 
 
+
+    public function scopeFindBySKU($query, $value)
+    {
+        $query->where('product_sku', $value);
+    }
+
     public function insert_data($data)
     {
         $insertData = [];

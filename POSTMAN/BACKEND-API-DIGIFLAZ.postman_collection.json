@@ -15,15 +15,13 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/product/get-product-prepaid",
-							"protocol": "http",
+							"raw": "{{BACKEND_URL}}/api/digiflaz/get-product-prepaid",
 							"host": [
-								"localhost"
+								"{{BACKEND_URL}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"product",
+								"digiflaz",
 								"get-product-prepaid"
 							]
 						}
@@ -36,16 +34,219 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/product/get-product-pasca",
-							"protocol": "http",
+							"raw": "{{BACKEND_URL}}/api/digiflaz/get-product-pasca",
 							"host": [
-								"localhost"
+								"{{BACKEND_URL}}"
 							],
-							"port": "8000",
+							"path": [
+								"api",
+								"digiflaz",
+								"get-product-pasca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topup & Tagihan",
+			"item": [
+				{
+					"name": "Topup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\": \"isat10000\",\r\n    \"customer_no\" : \"085721868539\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/digiflaz/topup",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
+							"path": [
+								"api",
+								"digiflaz",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cek Tagihan Pasca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sku\": \"bpjs\",\r\n    \"customer_no\": \"0000002223814094\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/digiflaz/cek-tagihan",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
+							"path": [
+								"api",
+								"digiflaz",
+								"cek-tagihan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bayar Tagihan Pasca",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ref_id\": \"INV-BL-23-10-000000016\",\r\n    \"sku\": \"bpjs\",\r\n    \"customer_no\": \"0000002223814094\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/digiflaz/bayar-tagihan",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
+							"path": [
+								"api",
+								"digiflaz",
+								"bayar-tagihan"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_TOKENS}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/auth/logout",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@email.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/auth/login",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Product Prepaid",
+			"item": [
+				{
+					"name": "Product Pulsa & Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{API_TOKENS}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_no\": \"081393444465\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BACKEND_URL}}/api/product/get-product-pulsa",
+							"host": [
+								"{{BACKEND_URL}}"
+							],
 							"path": [
 								"api",
 								"product",
-								"get-product-pasca"
+								"get-product-pulsa"
 							]
 						}
 					},
